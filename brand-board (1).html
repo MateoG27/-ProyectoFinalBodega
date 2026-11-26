@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reservas USFQ — Brand board</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Marca */
+  --color-primario: #e11b22;
+  --color-primario-hover: #b3151b;
+  --color-enlace: #c41b1e;
+  --color-texto: #231f20;
+  --color-texto-secundario: #5c5f62;
+  --color-fondo: #f5f5f5;
+  --color-superficie: #ffffff;
+  --color-borde: #d9dadb;
+  --color-borde-campo: #767779;
+  --color-foco: #1d4f91;
+
+  /* Estados */
+  --estado-ok: #1b6b3a;
+  --estado-ok-fondo: #e3f3e8;
+  --estado-aviso: #7a4a00;
+  --estado-aviso-fondo: #fbf1df;
+  --estado-error: #b3261e;
+  --estado-error-fondo: #fbecea;
+  --estado-info: #1d4f91;
+  --estado-info-fondo: #e6eef8;
+  --estado-neutro: #3f4245;
+  --estado-neutro-fondo: #ecedee;
+
+  /* Tipografía */
+  --fuente-base: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --texto-pantalla: 2rem;
+  --texto-seccion: 1.5rem;
+  --texto-destacado: 1.125rem;
+  --texto-base: 1rem;
+  --texto-ayuda: 0.875rem;
+
+  /* Espacio */
+  --espacio-1: 4px;
+  --espacio-2: 8px;
+  --espacio-3: 12px;
+  --espacio-4: 16px;
+  --espacio-5: 24px;
+  --espacio-6: 32px;
+  --espacio-7: 48px;
+
+  /* Forma */
+  --radio-control: 8px;
+  --radio-tarjeta: 12px;
+  --radio-pastilla: 999px;
+  --sombra-tarjeta: 0 1px 3px rgba(35, 31, 32, 0.12);
+  --area-tactil: 44px;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font: 400 var(--texto-base)/1.5 var(--fuente-base); color: var(--color-texto); background: var(--color-fondo); }
+header { background: var(--color-primario); color: #fff; padding: var(--espacio-7) var(--espacio-5); }
+.w { max-width: 1040px; margin: 0 auto; }
+section { padding: var(--espacio-6) var(--espacio-5); border-bottom: 1px solid var(--color-borde); }
+h1 { font-size: var(--texto-pantalla); line-height: 1.2; margin: 0 0 var(--espacio-2); }
+h2 { font-size: var(--texto-seccion); line-height: 1.2; margin: 0 0 var(--espacio-4); }
+h3 { font-size: var(--texto-destacado); margin: var(--espacio-5) 0 var(--espacio-2); }
+.logo { display: inline-block; font: 700 28px/1 Georgia, "Libre Baskerville", serif; letter-spacing: .04em; border: 2px solid #fff; padding: 8px 14px; margin-bottom: var(--espacio-5); }
+.ayuda { font-size: var(--texto-ayuda); color: var(--color-texto-secundario); }
+.kw { display: flex; gap: var(--espacio-2); flex-wrap: wrap; margin-top: var(--espacio-4); }
+.kw span { background: #fff; color: var(--color-texto); border-radius: var(--radio-pastilla); padding: 4px 16px; font-weight: 600; }
+.grid { display: grid; gap: var(--espacio-4); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.row { display: flex; gap: var(--espacio-3); flex-wrap: wrap; align-items: center; }
+.swatch { background: var(--color-superficie); border: 1px solid var(--color-borde); border-radius: var(--radio-tarjeta); overflow: hidden; }
+.swatch i { display: block; height: 64px; }
+.swatch div { padding: var(--espacio-3); font-size: var(--texto-ayuda); }
+.swatch b { display: block; font-size: var(--texto-base); }
+.tarjeta { background: var(--color-superficie); border: 1px solid var(--color-borde); border-radius: var(--radio-tarjeta); padding: var(--espacio-5); box-shadow: var(--sombra-tarjeta); }
+.scroll { overflow-x: auto; }
+.btn { font: 600 var(--texto-destacado)/1.2 var(--fuente-base); min-height: var(--area-tactil); padding: var(--espacio-3) var(--espacio-5); border-radius: var(--radio-control); border: 1px solid transparent; cursor: pointer; }
+.btn-primario { background: var(--color-primario); color: #fff; }
+.btn-primario:hover { background: var(--color-primario-hover); }
+.btn-secundario { background: #fff; color: var(--color-texto); border-color: var(--color-texto); }
+.btn-peligro { background: var(--estado-error); color: #fff; }
+.btn-texto { background: none; color: var(--color-enlace); padding: var(--espacio-3); }
+.btn-texto:hover { text-decoration: underline; }
+.btn:disabled { background: var(--estado-neutro-fondo); color: var(--color-texto-secundario); border-color: transparent; cursor: not-allowed; }
+.btn:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--color-foco); outline-offset: 2px; }
+.ancho { width: 100%; }
+label { display: block; font: 500 var(--texto-ayuda) var(--fuente-base); margin-bottom: var(--espacio-2); }
+input, select, textarea { font: 400 var(--texto-base) var(--fuente-base); min-height: var(--area-tactil); width: 100%; padding: var(--espacio-2) var(--espacio-3); border: 1px solid var(--color-borde-campo); border-radius: var(--radio-control); background: #fff; color: var(--color-texto); }
+textarea { min-height: 88px; }
+.campo-error input { border: 2px solid var(--estado-error); }
+.mensaje-error { font-size: var(--texto-ayuda); color: var(--estado-error); margin-top: var(--espacio-2); }
+.pill { display: inline-flex; align-items: center; gap: var(--espacio-1); border-radius: var(--radio-pastilla); padding: 4px 12px; font: 600 var(--texto-ayuda) var(--fuente-base); }
+.p-ok { background: var(--estado-ok-fondo); color: var(--estado-ok); }
+.p-aviso { background: var(--estado-aviso-fondo); color: var(--estado-aviso); }
+.p-error { background: var(--estado-error-fondo); color: var(--estado-error); }
+.p-info { background: var(--estado-info-fondo); color: var(--estado-info); }
+.p-neutro { background: var(--estado-neutro-fondo); color: var(--estado-neutro); }
+.p-neutro-borde { background: var(--estado-neutro-fondo); color: var(--estado-neutro); border: 1px solid var(--estado-error); }
+.p-solido { background: var(--estado-error); color: #fff; }
+.skel { background: var(--estado-neutro-fondo); border-radius: var(--radio-control); }
+.imagen { height: 96px; background: var(--estado-neutro-fondo); border-radius: var(--radio-control); margin-bottom: var(--espacio-3); }
+.tarjeta-item { display: flex; flex-direction: column; gap: var(--espacio-2); }
+.tono td, .tono th { padding: 12px; text-align: left; border-bottom: 1px solid var(--color-borde); vertical-align: top; }
+.tono th { background: var(--estado-neutro-fondo); }
+.tono table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radio-tarjeta); overflow: hidden; }
+.bueno { border-left: 4px solid var(--estado-ok); }
+.malo { border-left: 4px solid var(--estado-error); }
+.telefono { width: 340px; max-width: 100%; margin: 0 auto; background: #fff; border: 8px solid var(--color-texto); border-radius: 32px; overflow: hidden; }
+.telefono .barra-sup { background: var(--color-primario); color: #fff; padding: 12px 16px; font-weight: 700; }
+.telefono .cuerpo { padding: var(--espacio-4); background: var(--color-fondo); }
+.telefono .item { background: #fff; border: 1px solid var(--color-borde); border-radius: var(--radio-tarjeta); padding: var(--espacio-3); margin-top: var(--espacio-3); display: flex; gap: var(--espacio-3); }
+.telefono .miniatura { width: 64px; height: 64px; border-radius: var(--radio-control); background: var(--estado-neutro-fondo); flex: none; }
+.barra-inf { background: #fff; border-top: 1px solid var(--color-borde); padding: var(--espacio-3) var(--espacio-4); display: flex; justify-content: space-between; align-items: center; box-shadow: var(--sombra-tarjeta); }
+.modal-fondo { background: rgba(35, 31, 32, 0.45); padding: var(--espacio-4); border-radius: var(--radio-tarjeta); }
+</style>
+</head>
+<body>
+<header><div class="w">
+  <div class="logo" role="img" aria-label="Logotipo USFQ (marcador: sustituir por el logotipo oficial)">USFQ</div>
+  <p class="ayuda" style="color:#fff">Marcador de posición: reemplazar por el logotipo oficial con siglas del Manual de Identidad USFQ 2024. El escudo clásico no se usa en la interfaz.</p>
+  <h1>Reservas USFQ</h1>
+  <p style="font-size:20px;margin:0">Reservar un equipo o un espacio debe sentirse como pedir algo en una tienda en línea: claro, rápido y sin sorpresas.</p>
+  <div class="kw"><span>Claro</span><span>Rápido</span><span>Confiable</span></div>
+  <p class="ayuda" style="color:#fff;margin-top:var(--espacio-4)">Nombre de trabajo, provisional. Dirección visual: moderna y funcional, dentro de la marca USFQ.</p>
+</div></header>
+
+<section><div class="w">
+  <h2>Paleta</h2>
+  <p class="ayuda">Rojo, negro y blanco del manual USFQ 2024. Todo texto cumple 4,5:1 o más sobre su fondo. El rojo de marca nunca indica error.</p>
+  <div class="grid">
+    <div class="swatch"><i style="background:var(--color-primario)"></i><div><b>Rojo USFQ</b>--color-primario · #E11B22<br>Botón primario y barra superior. Blanco encima: 4,79:1</div></div>
+    <div class="swatch"><i style="background:var(--color-primario-hover)"></i><div><b>Rojo oscuro</b>--color-primario-hover · #B3151B<br>Hover y presionado. Blanco encima: 6,9:1</div></div>
+    <div class="swatch"><i style="background:var(--color-enlace)"></i><div><b>Rojo enlace</b>--color-enlace · #C41B1E<br>Enlaces sobre blanco: 5,96:1</div></div>
+    <div class="swatch"><i style="background:var(--color-texto)"></i><div><b>Negro USFQ</b>--color-texto · #231F20<br>Texto principal. Sobre blanco: 16,3:1</div></div>
+    <div class="swatch"><i style="background:var(--color-texto-secundario)"></i><div><b>Gris tinta</b>--color-texto-secundario · #5C5F62<br>Ayudas y fechas. Sobre blanco: 6,43:1</div></div>
+    <div class="swatch"><i style="background:var(--color-fondo);border-bottom:1px solid var(--color-borde)"></i><div><b>Gris claro</b>--color-fondo · #F5F5F5<br>Fondo de página</div></div>
+    <div class="swatch"><i style="background:var(--color-superficie);border-bottom:1px solid var(--color-borde)"></i><div><b>Blanco</b>--color-superficie · #FFFFFF<br>Tarjetas y formularios</div></div>
+    <div class="swatch"><i style="background:var(--color-foco)"></i><div><b>Azul foco</b>--color-foco · #1D4F91<br>Anillo de foco del teclado</div></div>
+  </div>
+  <h3>Colores de estado</h3>
+  <div class="row">
+    <span class="pill p-ok">✓ Disponible / Aprobada</span>
+    <span class="pill p-aviso">⏱ En revisión / Mantenimiento</span>
+    <span class="pill p-error">✕ Rechazada / Dañado</span>
+    <span class="pill p-info">▣ Retirada</span>
+    <span class="pill p-neutro">⊘ Neutro</span>
+  </div>
+  <p class="ayuda">Cada estado lleva icono y texto. Nunca se comunica solo con color.</p>
+</div></section>
+
+<section><div class="w">
+  <h2>Tipografía</h2>
+  <p class="ayuda">Inter (Google Fonts), sustituta web de Helvetica Neue del manual. Baskerville queda solo para el logotipo.</p>
+  <div class="tarjeta">
+    <div style="font:700 var(--texto-pantalla)/1.2 var(--fuente-base)">Título de pantalla — 32 px · 700</div>
+    <div style="font:700 var(--texto-seccion)/1.2 var(--fuente-base);margin-top:12px">Título de sección — 24 px · 700</div>
+    <div style="font:600 var(--texto-destacado)/1.5 var(--fuente-base);margin-top:12px">Destacado y botones — 18 px · 600</div>
+    <div style="margin-top:12px">Texto general y campos — 16 px · 400. Interlineado 1,5.</div>
+    <div class="ayuda" style="margin-top:12px">Ayudas, fechas y etiquetas — 14 px · 400 o 500 (mínimo)</div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <h2>Componentes</h2>
+
+  <h3>Botones</h3>
+  <div class="row">
+    <button class="btn btn-primario">Enviar solicitud</button>
+    <button class="btn btn-secundario">Cambiar fecha</button>
+    <button class="btn btn-peligro">Cancelar reserva</button>
+    <button class="btn btn-texto">Ver reglas</button>
+    <button class="btn" disabled>Agregar (no disponible)</button>
+  </div>
+  <p class="ayuda">Un solo botón primario por pantalla. Altura mínima 44 px. Peligro siempre con confirmación.</p>
+
+  <h3>Campos</h3>
+  <div class="grid" style="max-width:640px">
+    <div><label for="a">Fecha de retiro (obligatorio)</label><input id="a" value="mié 2 dic"></div>
+    <div class="campo-error"><label for="b">Hora de retiro (obligatorio)</label>
+      <input id="b" value="18:00" aria-describedby="m">
+      <div class="mensaje-error" id="m" role="alert">⚠ Elige una hora entre 8:00 y 17:20.</div>
+    </div>
+  </div>
+
+  <h3>Tarjeta de equipo o espacio</h3>
+  <div class="grid">
+    <div class="tarjeta tarjeta-item">
+      <div class="imagen" role="img" aria-label="Foto general de la cámara Sony FX3"></div>
+      <b>Cámara Sony FX3</b>
+      <div class="ayuda">3 de 5 disponibles</div>
+      <div><span class="pill p-ok">✓ Disponible</span></div>
+      <button class="btn btn-primario ancho">Agregar a la reserva</button>
+    </div>
+    <div class="tarjeta tarjeta-item">
+      <div class="imagen" role="img" aria-label="Foto general de Oculus Quest"></div>
+      <b>Oculus Quest</b>
+      <div class="ayuda">Elige el número de dispositivo</div>
+      <label for="disp" style="margin:0">Número de dispositivo (obligatorio)</label>
+      <select id="disp"><option>Dispositivo 2</option></select>
+      <button class="btn btn-primario ancho">Agregar a la reserva</button>
+    </div>
+    <div class="tarjeta tarjeta-item">
+      <div class="imagen" role="img" aria-label="Foto general del trípode Manfrotto"></div>
+      <b>Trípode Manfrotto</b>
+      <div class="ayuda">No disponible en este momento</div>
+      <div><span class="pill p-neutro">⊘ No disponible</span></div>
+      <button class="btn ancho" disabled>Agregar (no disponible)</button>
+    </div>
+    <div class="tarjeta tarjeta-item">
+      <div class="imagen" role="img" aria-label="Foto general del estudio de TV Miguel de Santiago"></div>
+      <b>Estudio de TV Miguel de Santiago</b>
+      <div class="ayuda">Espacio</div>
+      <div><span class="pill p-neutro">🔒 Solo para profesores</span></div>
+    </div>
+  </div>
+
+  <h3>Estados de una reserva</h3>
+  <div class="row">
+    <span class="pill p-aviso">⏱ En revisión</span>
+    <span class="pill p-ok">✓ Aprobada</span>
+    <span class="pill p-error">✕ Rechazada</span>
+    <span class="pill p-info">▣ Retirada</span>
+    <span class="pill p-neutro">✓✓ Devuelta</span>
+    <span class="pill p-neutro">⊘ Cancelada</span>
+    <span class="pill p-neutro">⏱ Vencida (no retirada)</span>
+    <span class="pill p-solido">⚠ Devolución tardía</span>
+  </div>
+
+  <h3>Estados de un ítem</h3>
+  <div class="row">
+    <span class="pill p-ok">✓ Disponible</span>
+    <span class="pill p-neutro">⊘ No disponible</span>
+    <span class="pill p-aviso">🔧 Mantenimiento · solo administrador</span>
+    <span class="pill p-error">✕ Dañado · solo administrador</span>
+    <span class="pill p-neutro-borde">? Extraviado · solo administrador</span>
+  </div>
+  <p class="ayuda">El estudiante ve «No disponible» para mantenimiento, dañado y extraviado. Solo el administrador ve el estado exacto.</p>
+
+  <h3>Los cuatro estados: cargando, vacío, error y éxito</h3>
+  <div class="grid">
+    <div class="tarjeta"><b>Cargando</b><div class="skel" style="height:56px;margin-top:12px"></div><div class="skel" style="height:56px;margin-top:8px"></div></div>
+    <div class="tarjeta"><b>Vacío</b><p class="ayuda">No hay equipos disponibles en ese horario. Prueba otra fecha o franja.</p><button class="btn btn-secundario">Cambiar fecha</button></div>
+    <div class="tarjeta" style="border-left:4px solid var(--estado-error)"><b>Error</b><p class="mensaje-error" role="alert" style="margin-top:8px">No pudimos cargar los equipos. Revisa tu conexión.</p><button class="btn btn-secundario">Reintentar</button></div>
+    <div class="tarjeta" style="border-left:4px solid var(--estado-ok)"><b>Éxito</b><p role="status" style="margin:8px 0 0"><span class="pill p-ok">✓ Agregado a la reserva</span></p></div>
+  </div>
+
+  <h3>Inicio de sesión y restablecimiento</h3>
+  <div class="tarjeta" style="max-width:420px">
+    <label for="correo">Correo institucional (obligatorio)</label>
+    <input id="correo" type="email" autocomplete="username" value="">
+    <label for="pass" style="margin-top:var(--espacio-4)">Contraseña (obligatorio)</label>
+    <input id="pass" type="password" autocomplete="current-password" value="">
+    <p class="ayuda" style="margin:var(--espacio-3) 0 0">Vacío: «Escribe tu correo y contraseña» deshabilita «Entrar».</p>
+    <div class="row" style="margin-top:var(--espacio-3)">
+      <button class="btn btn-primario">Entrar</button>
+      <button class="btn btn-texto">¿Olvidaste tu contraseña?</button>
+    </div>
+    <p class="mensaje-error" role="alert">Correo o contraseña incorrectos. Revisa los datos o restablece tu contraseña.</p>
+    <p role="status"><span class="pill p-ok">✓ Te enviamos un enlace a tu correo institucional.</span></p>
+  </div>
+
+  <h3>Calificación</h3>
+  <div class="tarjeta" style="max-width:420px">
+    <div role="group" aria-label="Calificación de 1 a 5" class="row">
+      <button class="btn btn-secundario" aria-pressed="false">1</button>
+      <button class="btn btn-secundario" aria-pressed="false">2</button>
+      <button class="btn btn-secundario" aria-pressed="false">3</button>
+      <button class="btn btn-primario" aria-pressed="true">4</button>
+      <button class="btn btn-secundario" aria-pressed="false">5</button>
+    </div>
+    <label for="com" style="margin-top:var(--espacio-3)">Comentario (opcional)</label>
+    <textarea id="com"></textarea>
+    <div class="row" style="margin-top:var(--espacio-3)"><button class="btn btn-primario">Enviar calificación</button></div>
+    <p class="ayuda">Vacío: sin calificación elegida, el botón queda deshabilitado con la razón «Elige una calificación de 1 a 5». Error: «No pudimos enviar tu calificación. Intenta de nuevo.» Éxito: «Gracias por calificar tu reserva.»</p>
+  </div>
+
+  <h3>Selector de idioma</h3>
+  <div class="row">
+    <span class="pill p-info" aria-current="true">Español</span>
+    <button class="btn btn-texto">English</button>
+  </div>
+  <p class="ayuda">Cargando: «Cambiando idioma…» por un instante. Vacío: no aplica, siempre hay dos idiomas. Error: «No pudimos cambiar el idioma. Sigue en español.» Éxito: «Idioma cambiado a English», con <code>role="status"</code>.</p>
+
+  <h3>Diálogo de confirmación: modificar el carrito</h3>
+  <div class="modal-fondo">
+    <div class="tarjeta" role="dialog" aria-labelledby="titulo-modal" style="max-width:520px;margin:0 auto">
+      <h3 id="titulo-modal" style="margin-top:0">Editar la reserva de un estudiante</h3>
+      <p class="ayuda">Quitar «Trípode Manfrotto» y agregar «Oculus Quest · Dispositivo 2». El estudiante recibirá un aviso con el cambio y el motivo.</p>
+      <label for="motivo">Motivo del cambio (obligatorio)</label>
+      <textarea id="motivo" aria-describedby="ayuda-motivo"></textarea>
+      <p class="ayuda" id="ayuda-motivo">Escribe el motivo del cambio. Se guarda en el historial de la reserva.</p>
+      <div class="row" style="justify-content:flex-end;margin-top:var(--espacio-4)">
+        <button class="btn btn-texto">Volver</button>
+        <button class="btn btn-primario" disabled>Guardar cambio</button>
+      </div>
+      <p class="ayuda">Razón del botón deshabilitado: «Escribe el motivo del cambio». Al guardar: «Cambio guardado. El estudiante recibió un aviso con el motivo.»</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <h2>Pantalla de ejemplo: catálogo con fecha elegida</h2>
+  <p class="ayuda">Móvil de 360 px. Primero la fecha, luego los equipos y el carrito siempre visible.</p>
+  <div class="telefono" role="region" aria-label="Pantalla móvil del catálogo con fecha mié 2 dic de 8:00 a 12:00 y carrito de 2 ítems">
+    <div class="barra-sup">Reservas USFQ</div>
+    <div class="cuerpo">
+      <div class="tarjeta" style="padding:12px">
+        <div class="ayuda">Retiro y devolución</div>
+        <b>mié 2 dic · 8:00–12:00</b>
+        <div class="ayuda">Menos de un mes · <button class="btn btn-texto" style="min-height:0;padding:0">Cambiar</button></div>
+      </div>
+      <div class="item"><div class="miniatura"></div><div><b>Cámara Sony FX3</b><div class="ayuda">3 de 5 disponibles</div><span class="pill p-ok">✓ Disponible</span></div></div>
+      <div class="item"><div class="miniatura"></div><div><b>Trípode Manfrotto</b><div class="ayuda">No disponible en este momento</div><span class="pill p-neutro">⊘ No disponible</span></div></div>
+      <div class="item"><div class="miniatura"></div><div><b>Oculus Quest</b><div class="ayuda">Dispositivo 2</div><span class="pill p-ok">✓ Disponible</span></div></div>
+    </div>
+    <div class="barra-inf"><div><b>2 ítems</b><div class="ayuda">Se vacía 1 h después del último ítem</div></div><button class="btn btn-primario" style="font-size:16px">Enviar solicitud</button></div>
+  </div>
+</div></section>
+
+<section><div class="w">
+  <h2>Tono de voz</h2>
+  <p class="ayuda">Directo, amable y concreto. Se habla de «tú». Se dice qué pasó y qué sigue.</p>
+  <div class="scroll tono"><table>
+    <tr><th>Así sí</th><th>Así no</th></tr>
+    <tr><td class="bueno">Tu solicitud está en revisión. Te avisaremos por correo.</td><td class="malo">Solicitud pendiente de procesamiento.</td></tr>
+    <tr><td class="bueno">Esa cámara ya está reservada de 10:00 a 12:00. Prueba otro horario.</td><td class="malo">Error 409: conflicto.</td></tr>
+    <tr><td class="bueno">Pasaron 15 minutos. Acércate a retirar tu reserva antes de las 8:30.</td><td class="malo">¡Llegas tarde!</td></tr>
+    <tr><td class="bueno">Tienes un bloqueo hasta el 9 de diciembre por una devolución tardía.</td><td class="malo">Usuario sancionado.</td></tr>
+    <tr><td class="bueno">Solo los profesores pueden reservar este espacio.</td><td class="malo">Acceso denegado.</td></tr>
+  </table></div>
+</div></section>
+</body>
+</html>
